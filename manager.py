@@ -53,10 +53,13 @@ def update_task(task_id: int, new_task_description: str):
                 task["description"] = new_task_description
                 task["updatedAt"] = time_now
 
-        # Clearing json file of any data
-        clear_json("tasks.json")
-        write_to_json(tasks_data, "tasks.json", "w")
-        print(f"Task {task_id} has been updated successfully at {time_now}.")
+        if task_found:
+            # Clearing json file of any data
+            clear_json("tasks.json")
+            write_to_json(tasks_data, "tasks.json", "w")
+            print(f"Task {task_id} has been updated successfully at {time_now}.")
+        else:
+            print(f"Task {task_id} not found.")
 
 
 def mark_in_progress(task_id: int):
