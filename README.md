@@ -13,7 +13,7 @@ A command-line tool for managing tasks with functionalities to add, update, list
 
 ## Requirements
 
-- [[Python]] 3.x
+- Python 3.x
 - `argparse` (comes with the Python standard library)
 - `prettytable` (for displaying tasks in a table format)
 
@@ -40,43 +40,6 @@ Run the script from the command line:
 python __main__.py [command] [arguments]
 ```
 
-```python
-PS C:\Users\path\to\your\project> python .\__main__.py --help
-
-usage: python __main__.py [-h] [add TASK] | [mark-in-progress [ID...]] | [mark-done [ID...]] | [list done | todo | in-progress] | [update ID TASK]
-
-Command-line tool to add, update, list, delete and mark tasks.
-
-positional arguments:
-  {add,update,mark-in-progress,mark-done,delete,list}
-    add                 add a task
-    update              update an existing task (task_id [int] and task_update [str])
-    mark-in-progress    mark a task (or several tasks) as 'in-progress'
-    mark-done           mark a task (or several tasks) as 'done'
-    delete              delete a task
-    list                list task(s) [todo | done | in-progress]
-
-options:
-  -h, --help            show this help message and exit
-
-    Example usages:
-        python __main__.py add "Buy groceries"  (ID: 1)
-        python __main__.py add "Visit family"   (ID: 2)
-        python __main__.py add "Gas car"        (ID: 3)
-
-        python __main__.py update 1 "Buy groceries and cook dinner"
-        python __main__.py delete 1
-
-        python __main__.py mark-in-progress 1
-        python __main__.py mark-in-progress 1 2 3
-        python __main__.py mark-done 1
-        python __main__.py mark-done 1 2 3
-
-        python __main__.py list
-        python __main__.py list done
-        python __main__.py list todo
-        python __main__.py list in-progress
-```
 ### Example Usages:
 
 - **Add a Task**:
@@ -137,6 +100,43 @@ To see the help message:
 
 ```bash
 python __main__.py -h
+```
+```python
+PS C:\Users\path\to\your\project> python .\__main__.py --help
+
+usage: python __main__.py [-h] [add TASK] | [mark-in-progress [ID...]] | [mark-done [ID...]] | [list done | todo | in-progress] | [update ID TASK]
+
+Command-line tool to add, update, list, delete and mark tasks.
+
+positional arguments:
+  {add,update,mark-in-progress,mark-done,delete,list}
+    add                 add a task
+    update              update an existing task (task_id [int] and task_update [str])
+    mark-in-progress    mark a task (or several tasks) as 'in-progress'
+    mark-done           mark a task (or several tasks) as 'done'
+    delete              delete a task
+    list                list task(s) [todo | done | in-progress]
+
+options:
+  -h, --help            show this help message and exit
+
+    Example usages:
+        python __main__.py add "Buy groceries"  (ID: 1)
+        python __main__.py add "Visit family"   (ID: 2)
+        python __main__.py add "Gas car"        (ID: 3)
+
+        python __main__.py update 1 "Buy groceries and cook dinner"
+        python __main__.py delete 1
+
+        python __main__.py mark-in-progress 1
+        python __main__.py mark-in-progress 1 2 3
+        python __main__.py mark-done 1
+        python __main__.py mark-done 1 2 3
+
+        python __main__.py list
+        python __main__.py list done
+        python __main__.py list todo
+        python __main__.py list in-progress
 ```
 
 ## Project Structure
