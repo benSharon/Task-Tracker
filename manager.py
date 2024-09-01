@@ -46,8 +46,10 @@ def update_task(task_id: int, new_task_description: str):
         raise FileNotFoundError("'tasks.json' does not exist.")
     else:
         tasks_data: list[dict] = read_json("tasks.json")
+        task_found = False
         for task in tasks_data:
             if task["id"] == task_id:
+                task_found = True
                 task["description"] = new_task_description
                 task["updatedAt"] = time_now
 
@@ -93,6 +95,8 @@ def mark_done(task_id: int):
             clear_json("tasks.json")
             write_to_json(tasks_data, "tasks.json", "w")
             print(f"Task {task_id} has been marked as 'done'.")
+        else:
+            print(f"Task {task_id} not found.")
 
 
 def delete_task(task_id: int):
@@ -100,14 +104,19 @@ def delete_task(task_id: int):
         raise FileNotFoundError("'tasks.json' does not exist.")
     else:
         tasks_data: list[dict] = read_json("tasks.json")
+        task_found = False
         for task in tasks_data:
             if task["id"] == task_id:
+                task_found = True
                 tasks_data.remove(task)
 
-        # Clearing json file.
-        clear_json("tasks.json")
-        write_to_json(tasks_data, "tasks.json", "w")
-        print(f"Task {task_id} has been removed successfully.")
+        if task_found:
+            # Clearing json file.
+            clear_json("tasks.json")
+            write_to_json(tasks_data, "tasks.json", "w")
+            print(f"Task {task_id} has been removed successfully.")
+        else:
+            print(f"Task {task_id} not found.")
 
 
 def list_task(status: str):
