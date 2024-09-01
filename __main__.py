@@ -32,7 +32,7 @@ def main():
     parser = argparse.ArgumentParser(
         formatter_class=argparse.RawTextHelpFormatter,
         usage="python __main__.py [-h] [add TASK] | [mark-in-progress [ID...]] | [mark-done [ID...]] | [list done | "
-              "todo | in-progress] | [update ID TASK]",
+        "todo | in-progress] | [update ID TASK]",
         prog="Task Tracker",
         description=description,
         epilog=epilog,
