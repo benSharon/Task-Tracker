@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "description": "go have breakfast",
+        "status": "done",
+        "createdAt": "2024-09-01 13:30:59",
+        "updatedAt": "2024-09-01 13:31:36"
+    },
+    {
+        "id": 2,
+        "description": "fringe",
+        "status": "in-progress",
+        "createdAt": "2024-09-01 13:31:07",
+        "updatedAt": "2024-09-01 13:31:48"
+    },
+    {
+        "id": 3,
+        "description": "polish task-tracker",
+        "status": "in-progress",
+        "createdAt": "2024-09-01 13:31:11",
+        "updatedAt": "2024-09-01 13:47:35"
+    },
+    {
+        "id": 4,
+        "description": "class",
+        "status": "todo",
+        "createdAt": "2024-09-01 14:15:29",
+        "updatedAt": ""
+    }
+]
