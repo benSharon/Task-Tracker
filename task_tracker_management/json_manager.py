@@ -11,7 +11,7 @@ def write_to_json(task, json_file_name: str, mode: str):
 
 
 def read_json(json_file_name: str):
-    if pathlib.Path("tasks.json").stat().st_size == 0:
+    if pathlib.Path("../tasks.json").stat().st_size == 0:
         print("JSON file is empty.")
     else:
         with open(json_file_name, "r") as file:
@@ -23,7 +23,7 @@ def clear_json(json_file_name: str):
 
 
 def display_json(status: str):
-    json_data = read_json("tasks.json")
+    json_data = read_json("../tasks.json")
     if not json_data:
         print("No tasks found.")
     else:
