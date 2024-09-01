@@ -13,7 +13,7 @@ A command-line tool for managing tasks with functionalities to add, update, list
 
 ## Requirements
 
-- [[Python]] 3.x
+- Python 3.x
 - `argparse` (comes with the Python standard library)
 - `prettytable` (for displaying tasks in a table format)
 
