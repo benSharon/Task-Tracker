@@ -76,6 +76,8 @@ def mark_in_progress(task_id: int):
             clear_json("tasks.json")
             write_to_json(tasks_data, "tasks.json", "w")
             print(f"Task {task_id} has been marked 'in-progress'.")
+        else:
+            print(f"Task {task_id} not found.")
 
 
 def mark_done(task_id: int):
