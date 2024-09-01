@@ -1,12 +1,12 @@
 import pathlib
 
+from datetime import datetime
 from task_tracker_management.json_manager import (
     read_json,
     write_to_json,
     clear_json,
     display_json,
 )
-from datetime import datetime
 
 time_now = datetime.today().strftime("%Y-%m-%d %H:%M:%S")
 
