@@ -1,6 +1,6 @@
 import argparse
 
-from manager import (
+from task_tracker_management.manager import (
     add_task,
     update_task,
     list_task,
