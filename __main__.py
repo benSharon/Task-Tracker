@@ -82,16 +82,21 @@ def main():
 
     if args.command == "add":
         add_task(args.task_description)
+
     elif args.command == "update":
         update_task(args.task_id, args.task_description)
+
     elif args.command == "mark-in-progress":
         for task_id in args.task_ids:
             mark_in_progress(task_id)
+
     elif args.command == "mark-done":
         for task_id in args.task_ids:
             mark_done(task_id)
+
     elif args.command == "list":
         list_task(args.status)
+
     elif args.command == "delete":
         delete_task(args.task_id)
 
