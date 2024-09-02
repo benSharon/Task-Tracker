@@ -11,9 +11,14 @@ from task_tracker_management.manager import (
 
 
 def main():
-    description = "Command-line tool to add, update, list, delete and mark tasks."
+    PROG = "Task Tracker"
+    DESCRIPTION = "Command-line tool to add, update, list, delete and mark tasks."
+    USAGE = (
+        "python tracker_cli.py [-h] [add TASK] | [mark-in-progress [ID...]] | [mark-done [ID...]] | "
+        "[list done | todo | in-progress] | [update ID TASK]"
+    )
 
-    epilog = """
+    EPILOG = """
     Example usages:
         python tracker_cli.py add "Buy groceries"  (ID: 1)
 
@@ -31,11 +36,10 @@ def main():
 
     parser = argparse.ArgumentParser(
         formatter_class=argparse.RawTextHelpFormatter,
-        usage="python tracker_cli.py [-h] [add TASK] | [mark-in-progress [ID...]] | [mark-done [ID...]] | [list done | "
-              "todo | in-progress] | [update ID TASK]",
-        prog="Task Tracker",
-        description=description,
-        epilog=epilog,
+        usage=USAGE,
+        prog=PROG,
+        description=DESCRIPTION,
+        epilog=EPILOG,
     )
 
     subparsers = parser.add_subparsers(dest="command")
@@ -65,8 +69,12 @@ def main():
         "task_ids", nargs="+", type=int, help="Task id(s) to mark as 'done'"
     )
 
-    delete_parser = subparsers.add_parser("delete", help="delete a task (or several tasks)")
-    delete_parser.add_argument("task_ids", nargs="+", type=int, help="Task id(s) to be deleted")
+    delete_parser = subparsers.add_parser(
+        "delete", help="delete a task (or several tasks)"
+    )
+    delete_parser.add_argument(
+        "task_ids", nargs="+", type=int, help="Task id(s) to be deleted"
+    )
 
     list_parser = subparsers.add_parser(
         "list", help="list task(s) [todo | done | in-progress]"
