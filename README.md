@@ -73,7 +73,7 @@ python tracker_cli.py [command] [arguments]
   ```
 
 - **List Tasks by Status**:
-  ```bash
+  ```
   python tracker_cli.py list done
   python tracker_cli.py list todo
   python tracker_cli.py list in-progress
@@ -101,7 +101,7 @@ To see the help message:
 ```bash
 python tracker_cli.py -h
 ```
-```python
+```
 PS C:\Users\path\to\your\project> python .\tracker_cli.py --help
 
 usage: python tracker_cli.py [-h] [add TASK] | [mark-in-progress [ID...]] | [mark-done [ID...]] | [list done | todo | in-progress] | [update ID TASK]
