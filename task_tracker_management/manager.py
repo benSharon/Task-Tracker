@@ -32,10 +32,10 @@ def add_task(task_description: str):
         clear_json("tasks.json")
 
         # Get last task's id.
-        last_id = max(task["id"] for task in tasks_data) if tasks_data else 0
+        last_id = (max(task["id"] for task in tasks_data) if tasks_data else 0) + 1
 
         new_task = {
-            "id": last_id + 1,
+            "id": last_id,
             "description": task_description,
             "status": "todo",
             "createdAt": time_now,
@@ -43,7 +43,7 @@ def add_task(task_description: str):
         }
         tasks_data.append(new_task)
         write_to_json(tasks_data, "tasks.json", "a")
-        print(f'Task {task_id} "{task_description}" has been added successfully.')
+        print(f'Task {last_id} "{task_description}" has been added successfully.')
 
 
 def update_task(task_id: int, new_task_description: str):

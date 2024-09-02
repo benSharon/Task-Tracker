@@ -32,7 +32,7 @@ def main():
     parser = argparse.ArgumentParser(
         formatter_class=argparse.RawTextHelpFormatter,
         usage="python tracker_cli.py [-h] [add TASK] | [mark-in-progress [ID...]] | [mark-done [ID...]] | [list done | "
-        "todo | in-progress] | [update ID TASK]",
+              "todo | in-progress] | [update ID TASK]",
         prog="Task Tracker",
         description=description,
         epilog=epilog,
@@ -55,18 +55,18 @@ def main():
         "mark-in-progress", help="mark a task (or several tasks) as 'in-progress'"
     )
     mark_in_progress_parser.add_argument(
-        "task_ids", nargs="+", type=int, help="Task id to mark as 'in-progress'"
+        "task_ids", nargs="+", type=int, help="Task id(s) to mark as 'in-progress'"
     )
 
     mark_done_parser = subparsers.add_parser(
         "mark-done", help="mark a task (or several tasks) as 'done'"
     )
     mark_done_parser.add_argument(
-        "task_ids", nargs="+", type=int, help="Task id to mark as 'done'"
+        "task_ids", nargs="+", type=int, help="Task id(s) to mark as 'done'"
     )
 
-    delete_parser = subparsers.add_parser("delete", help="delete a task")
-    delete_parser.add_argument("task_id", type=int, help="Task id to be deleted")
+    delete_parser = subparsers.add_parser("delete", help="delete a task (or several tasks)")
+    delete_parser.add_argument("task_ids", nargs="+", type=int, help="Task id(s) to be deleted")
 
     list_parser = subparsers.add_parser(
         "list", help="list task(s) [todo | done | in-progress]"
@@ -79,7 +79,6 @@ def main():
     )
 
     args = parser.parse_args()
-
     if args.command == "add":
         add_task(args.task_description)
 
@@ -94,11 +93,12 @@ def main():
         for task_id in args.task_ids:
             mark_done(task_id)
 
+    elif args.command == "delete":
+        for task_id in args.task_ids:
+            delete_task(task_id)
+
     elif args.command == "list":
         list_task(args.status)
-
-    elif args.command == "delete":
-        delete_task(args.task_id)
 
 
 if __name__ == "__main__":
