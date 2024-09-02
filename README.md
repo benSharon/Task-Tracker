@@ -37,51 +37,51 @@ A command-line tool for managing tasks with functionalities to add, update, list
 Run the script from the command line:
 
 ```bash
-python __main__.py [command] [arguments]
+python tracker-cli.py [command] [arguments]
 ```
 
 ### Example Usages:
 
 - **Add a Task**:
   ```bash
-  python __main__.py add "Buy groceries"
+  python tracker-cli.py add "Buy groceries"
   ```
 
 - **Update a Task**:
   ```bash
-  python __main__.py update 1 "Buy groceries and cook dinner"
+  python tracker-cli.py update 1 "Buy groceries and cook dinner"
   ```
 
 - **Mark a Task as In-Progress**:
   ```bash
-  python __main__.py mark-in-progress 1
+  python tracker-cli.py mark-in-progress 1
   ```
 
 - **Mark a Task as Done**:
   ```bash
-  python __main__.py mark-done 1
+  python tracker-cli.py mark-done 1
   ```
 
 - **Delete a Task**:
   ```bash
-  python __main__.py delete 1
+  python tracker-cli.py delete 1
   ```
 
 - **List All Tasks**:
   ```bash
-  python __main__.py list
+  python tracker-cli.py list
   ```
 
 - **List Tasks by Status**:
   ```bash
-  python __main__.py list done
-  python __main__.py list todo
-  python __main__.py list in-progress
+  python tracker-cli.py list done
+  python tracker-cli.py list todo
+  python tracker-cli.py list in-progress
   ```
 
 ### Example output:
 ```
-PS C:\Users\path\to\yout\project> python .\__main__.py list
+PS C:\Users\path\to\yout\project> python .\tracker-cli.py list
 +----+---------------------+-------------+---------------------+---------------------+
 | id |     description     |    status   |      createdAt      |      updatedAt      |
 +----+---------------------+-------------+---------------------+---------------------+
@@ -99,12 +99,12 @@ PS C:\Users\path\to\yout\project> python .\__main__.py list
 To see the help message:
 
 ```bash
-python __main__.py -h
+python tracker-cli.py -h
 ```
 ```python
-PS C:\Users\path\to\your\project> python .\__main__.py --help
+PS C:\Users\path\to\your\project> python .\tracker-cli.py --help
 
-usage: python __main__.py [-h] [add TASK] | [mark-in-progress [ID...]] | [mark-done [ID...]] | [list done | todo | in-progress] | [update ID TASK]
+usage: python tracker-cli.py [-h] [add TASK] | [mark-in-progress [ID...]] | [mark-done [ID...]] | [list done | todo | in-progress] | [update ID TASK]
 
 Command-line tool to add, update, list, delete and mark tasks.
 
@@ -121,27 +121,27 @@ options:
   -h, --help            show this help message and exit
 
     Example usages:
-        python __main__.py add "Buy groceries"  (ID: 1)
-        python __main__.py add "Visit family"   (ID: 2)
-        python __main__.py add "Gas car"        (ID: 3)
+        python tracker-cli.py add "Buy groceries"  (ID: 1)
+        python tracker-cli.py add "Visit family"   (ID: 2)
+        python tracker-cli.py add "Gas car"        (ID: 3)
 
-        python __main__.py update 1 "Buy groceries and cook dinner"
-        python __main__.py delete 1
+        python tracker-cli.py update 1 "Buy groceries and cook dinner"
+        python tracker-cli.py delete 1
 
-        python __main__.py mark-in-progress 1
-        python __main__.py mark-in-progress 1 2 3
-        python __main__.py mark-done 1
-        python __main__.py mark-done 1 2 3
+        python tracker-cli.py mark-in-progress 1
+        python tracker-cli.py mark-in-progress 1 2 3
+        python tracker-cli.py mark-done 1
+        python tracker-cli.py mark-done 1 2 3
 
-        python __main__.py list
-        python __main__.py list done
-        python __main__.py list todo
-        python __main__.py list in-progress
+        python tracker-cli.py list
+        python tracker-cli.py list done
+        python tracker-cli.py list todo
+        python tracker-cli.py list in-progress
 ```
 
 ## Project Structure
 
-- `__main__.py`: The entry point of the application, responsible for parsing command-line arguments and invoking the appropriate task functions.
+- `tracker-cli.py`: The entry point of the application, responsible for parsing command-line arguments and invoking the appropriate task functions.
 - `manager.py`: Contains functions for task operations like adding, updating, listing, marking, and deleting tasks.
 - `json_manager.py`: Manages reading from and writing to the JSON file where tasks are stored.
 
