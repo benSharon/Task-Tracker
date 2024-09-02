@@ -15,23 +15,23 @@ def main():
 
     epilog = """
     Example usages:
-        python tracker-cli.py add "Buy groceries"  (ID: 1)
+        python tracker_cli.py add "Buy groceries"  (ID: 1)
 
-        python tracker-cli.py update 1 "Buy groceries and cook dinner"
-        python tracker-cli.py delete 1
+        python tracker_cli.py update 1 "Buy groceries and cook dinner"
+        python tracker_cli.py delete 1
 
-        python tracker-cli.py mark-in-progress 1
-        python tracker-cli.py mark-done 1
+        python tracker_cli.py mark-in-progress 1
+        python tracker_cli.py mark-done 1
 
-        python tracker-cli.py list
-        python tracker-cli.py list done
-        python tracker-cli.py list todo
-        python tracker-cli.py list in-progress
+        python tracker_cli.py list
+        python tracker_cli.py list done
+        python tracker_cli.py list todo
+        python tracker_cli.py list in-progress
     """
 
     parser = argparse.ArgumentParser(
         formatter_class=argparse.RawTextHelpFormatter,
-        usage="python tracker-cli.py [-h] [add TASK] | [mark-in-progress [ID...]] | [mark-done [ID...]] | [list done | "
+        usage="python tracker_cli.py [-h] [add TASK] | [mark-in-progress [ID...]] | [mark-done [ID...]] | [list done | "
         "todo | in-progress] | [update ID TASK]",
         prog="Task Tracker",
         description=description,
