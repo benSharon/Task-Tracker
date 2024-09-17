@@ -22,7 +22,7 @@ def add_task(task_description: str):
             "updatedAt": "",
         }
     ]
-    if not pathlib.Path("tasks.json") or pathlib.Path("tasks.json").stat().st_size == 0:
+    if not pathlib.Path("tasks.json"):
         write_to_json(task, "tasks.json", "w")
         print(f'Task {task_id} "{task_description}" has been added successfully.')
     else:
